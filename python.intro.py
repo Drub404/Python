@@ -1,3 +1,5 @@
+import time
+
 error_message = "Your input was not valid."
 
 while True:

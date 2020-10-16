@@ -1,24 +1,21 @@
 error_message = "This input is invalid."
+options = ["A", "S", "D", "M", "Q"]
 
 def main():
     choice = input("""
-    Welcome to Mr. Cat's first calculator!
+|===  Mr. Cat's Calculator        ===|
+|===  Enter A for addition        ===|
+|===  Enter S for substraction    ===|
+|===  Enter D for division        ===|
+|===  Enter M for multiplication  ===|
 
-    Please enter your choice for the calculator.
-    Addition/Substraction/Division/Multiplication
-    A - S - D - M
-    :""")
-
-    if choice == "A":
-        answer_function(choice)
-    elif choice == "S":
-        answer_function(choice)
-    elif choice == "D":
-        answer_function(choice)
-    elif choice == "M":
+|==   Enter Q to quit             ===|
+""")
+    if choice in options:
         answer_function(choice)
     else:
         print(error_message)
+        main()
 
 def answer_function(choice):
     num1 = int(input("First number:"))

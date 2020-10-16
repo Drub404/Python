@@ -1,0 +1,1 @@
+Python script that opens a GUI with buttons with names of different apps on which allow me to click on it and then open the app instantly without having to go to the standard app itself.

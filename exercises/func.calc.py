@@ -1,6 +1,7 @@
 error_message = "This input is invalid."
 options = ["A", "S", "D", "M"]
 
+
 def main():
     choice = input("""
 |===  Mr. Cat's Calculator        ===|
@@ -14,6 +15,7 @@ def main():
     else:
         print(error_message)
         main()
+
 
 def answer_function(choice):
     num1 = int(input("First number:"))
@@ -32,5 +34,6 @@ def answer_function(choice):
         print(answer)
     else:
         print(error_message)
+
 
 main()

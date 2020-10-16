@@ -1,5 +1,5 @@
 error_message = "This input is invalid."
-options = ["A", "S", "D", "M", "Q"]
+options = ["A", "S", "D", "M"]
 
 def main():
     choice = input("""
@@ -8,8 +8,6 @@ def main():
 |===  Enter S for substraction    ===|
 |===  Enter D for division        ===|
 |===  Enter M for multiplication  ===|
-
-|==   Enter Q to quit             ===|
 """)
     if choice in options:
         answer_function(choice)

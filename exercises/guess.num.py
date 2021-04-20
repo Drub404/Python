@@ -9,7 +9,6 @@ https://www.upgrad.com/blog/python-projects-ideas-topics-beginners/ """
 
 import random
 import sys
-import time
 
 score = 5
 
@@ -18,29 +17,37 @@ def start_game():
         I have chosen a random number ranging from 1-10.
         Every time you guess wrong, your score gets reduced.
         If you're left with 0 score, the game will stop and output the number.""")
-    num = random.randint(1, 100)
+    num = random.randint(1, 10)
     guessing(num, score)
 
 def guessing(num, score):
     if score <= 0:
         print("Unfortunately, you have no more tries left. The number was {0}".format(num))
-        time.sleep(3)
-        sys.exit
+        again = str(input("Would you like to play again?:"))
+        play_again(again)
     else:
-        guess = input("Guess the number:")
+        guess = int(input("Guess the number:"))
         compare_num(num, guess, score)
     
 def compare_num(num, guess, score):
     if guess == "":
         print("You haven't entered anything.")
         guessing(num, score)
-    elif guess != num:
-        score -= 1
-        print("Wrong guess.")
-        guessing(num, score)
+    elif num != guess:
+        if score >= 3:
+            score -= 1
+            print("Wrong guess. {0} tries left! {1}".format(score, num))
+            guessing(num, score)
+        elif score == 2:
+            print("This is your last try! Use it well!")
+            score -= 1
+            guessing(num, score)
+        elif score >= 1:
+            score -= 1
+            guessing(num, score)
     else:
-        print("You guessed the number right! You received {0} score.".format(score))
-        again = str(input("Would you like to play again?:"))
+        print("You guessed the number right! You had {0} tries left! Good job!".format(score))
+        again = str(input("Would you like to play again?\nYes or no?:"))
         play_again(again)
 
 def play_again(again):
